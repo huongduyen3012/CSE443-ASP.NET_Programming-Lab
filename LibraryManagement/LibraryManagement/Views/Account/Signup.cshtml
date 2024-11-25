@@ -1,0 +1,55 @@
+﻿@model LibraryManagement.Models.SignUpViewModel
+
+@{
+    ViewData["Title"] = "Signup";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card shadow-lg text-black" style="border-radius: 15px;">
+                <div class="card-body">
+                    <h4 class="card-title text-center"><strong>Create new account</strong></h4>
+                    <p class="text-center">Welcome! Please fill in your informaiton. </p>
+                    <form asp-action="Signup" method="post" class="mx-1 mx-md-4">
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text" asp-for="Email"> <i class="fas fa-envelope"></i></span>
+                            <input asp-for="Email" type="email" class="form-control" id="email" name="email" placeholder="Email" required />
+                            <span asp-validation-for="Email"></span>
+                        </div>
+
+                 
+
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text bg-white" asp-for="Password"><i class="fas fa-lock"></i></span>
+                            <input asp-for="Password" type="password" class="form-control" id="password" name="password" placeholder="Password" required />
+                            <span asp-validation-for="Password"></span>
+                        </div>
+
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text bg-white" asp-for="Password"><i class="fas fa-lock"></i></span>
+                            <input asp-for="ConfirmPassword" type="password" class="form-control" id="password" name="confirmPassword" placeholder="Confirm Password" required />
+                            <span asp-validation-for="ConfirmPassword"></span>
+                        </div>
+
+                        <div class="form-check d-flex justify-content-center mb-3">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                            <label class="form-check-label" for="form2Example3">
+                                I agree all statements in <a href="#!">Terms of service</a>
+                            </label>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary w-100 mb-2">Sign up</button>
+                        <p class="text-center">Already have an account? <a asp-controller="Account" asp-action="Login" class="link-primary text-decoration-none">Login here</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

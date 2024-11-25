@@ -1,0 +1,65 @@
+﻿@model LibraryManagement.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card shadow-lg" text-black" style="border-radius: 15px;">
+                <div class="card-body">
+                    <h4 class="card-title text-center"><strong>Log in to your account</strong></h4>
+                    <p class="text-center">Welcome! Please fill in your informaiton. </p>
+                    <form asp-action="Login" method="post" class="mx-1 mx-md-4">
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input asp-for="Email" type="email" class="form-control" name="email" placeholder="Email">
+                            <span asp-validation-for="Email"></span>
+
+                        </div>
+
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            <input asp-for="Password" type="password" class="form-control" id="password" name="password" placeholder="Password" required />
+                            <span asp-validation-for="Password"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check mb-0">
+                                <input asp-for="RememberMe" class="form-check-input me-2" type="checkbox" value="" id="rememberMe" />
+                                <label class="form-check-label" for="rememberMe">
+                                    Remember me
+                                </label>
+                            </div>
+                            <a href="" class="text-primary">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Log in</button>
+
+                        <div class="d-flex justify-content-center text-center mt-4 mb-3 pt-1">
+                            <a href="@Url.Action("GoogleLogin", "Account")" class="btn btn-primary btn-floating mx-1">
+                                <i class="fab fa-google" aria-hidden="true"></i>
+                            </a>
+
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+                                <i class="fab fa-linkedin-in"></i>
+                            </button>
+                        </div>
+                        <p class="text-center">Don't have an account? <a asp-controller="Account" asp-action="Signup" class="link-primary text-decoration-none">Register here</a></p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

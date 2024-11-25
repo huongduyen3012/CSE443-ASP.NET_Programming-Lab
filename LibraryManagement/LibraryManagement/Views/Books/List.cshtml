@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Book List";
+}
+
+<div class="container mt-5 mb-5">
+    <h2 class="mb-4">@ViewBag.Category Books</h2>
+
+    <div class="row row-cols-lg-5 g-2">
+        @foreach (var book in ViewBag.Books)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="~/@book.Avatar" alt="@book.Title" class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <p class="card-text">
+                            <strong>Description:</strong> @book.Description <br />
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <a href="@Url.Action("BookDetail", "Books", new { id = book.BookId })" class="btn btn-secondary">View Details</a>
+                            <a asp-action="ReadPdf" asp-route-id="@book.BookId" class="btn btn-primary">Read PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

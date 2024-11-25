@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\carousel_images\children-bookstore.jpg" />
+    <Content Remove="wwwroot\images\books\shs-tieng-anh-6-tap-1-1.jpg" />
+    <Content Remove="wwwroot\images\books\xa-hoi-6.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\carousel_images\children-bookstore.jpg" />
+    <None Include="wwwroot\images\am-nhac-6.png" />
+    <None Include="wwwroot\images\books\shs-tieng-anh-6-tap-1-1.jpg" />
+    <None Include="wwwroot\images\books\xa-hoi-6.png" />
+    <None Include="wwwroot\images\cong-nghe-6.png" />
+    <None Include="wwwroot\images\gdcd-6.png" />
+    <None Include="wwwroot\images\khoa-hoc-tu-nhien.png" />
+    <None Include="wwwroot\images\lich-su-6.png" />
+    <None Include="wwwroot\images\my-thuat-6.png" />
+    <None Include="wwwroot\images\shs-tieng-anh-6-tap-1-1.jpg" />
+    <None Include="wwwroot\images\tieng-anh.png" />
+    <None Include="wwwroot\images\xa-hoi-6.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.3.3" />
+    <PackageReference Include="EntityFramework" Version="6.5.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\authors\" />
+    <Folder Include="wwwroot\images\user\" />
+  </ItemGroup>
+
+</Project>

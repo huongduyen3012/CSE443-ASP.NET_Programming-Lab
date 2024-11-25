@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    /* Remove all scrollbars */
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    /* Force the iframe to take the full viewport size */
+    iframe {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        overflow: hidden;
+    }
+</style>
+
+@if (!string.IsNullOrEmpty(ViewBag.PdfPath))
+{
+
+    <iframe src="@ViewBag.PdfPath" allow="fullscreen"></iframe>
+}
+else
+{
+    <p>Sorry, the PDF file is not available.</p>
+}
