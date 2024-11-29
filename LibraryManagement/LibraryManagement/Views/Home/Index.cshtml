@@ -7,7 +7,7 @@
 <div class="container mt-4">
     <div class="d-flex align-items-center mb-3">
         <hr class="flex-grow-1">
-        <h3 class="mx-3">TÀI LIỆU SỐ SÁCH THAM KHẢO (CẤP 2)</h3>
+        <h3 class="mx-3">RECOMMENED BOOKS</h3>
         <hr class="flex-grow-1">
     </div>
 
@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <h5 class="card-title">@book.Title</h5>
                         <p class="card-text">@book.Description</p>
-                        <a href="@Url.Action("Detail", "Book", new { id = book.BookId })" class="btn btn-primary">View Details</a>
+                        <a href="@Url.Action("BookDetail", "Books", new { id = book.BookId })" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>

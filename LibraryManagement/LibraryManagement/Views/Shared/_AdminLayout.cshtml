@@ -19,7 +19,7 @@
 
         /* Sidebar styling */
         nav {
-            background-color: #405189;
+            background-color: #585B7A;
             color: #ffffff;
             position: fixed;
             top: 0;
@@ -42,11 +42,10 @@
             transition: color 0.2s, background-color 0.2s;
             border-radius: 0.25rem;
         }
-
-            .nav-link:hover, .nav-link.active {
-                background-color: var(--dark-skyblue);
-                color: #ffffff;
-            }
+        .nav-link:hover {
+            color: #ffffff
+        }
+      
 
         /* Content area styling */
         main {
@@ -84,9 +83,8 @@
                 <a class="nav-link" asp-controller="User" asp-action="Index"><i class="fas fa-users"></i> User</a>
             </ul>
         </nav>
-
-        <!-- Content Area -->
     </div>
+
     <main>
         @RenderBody()
     </main>

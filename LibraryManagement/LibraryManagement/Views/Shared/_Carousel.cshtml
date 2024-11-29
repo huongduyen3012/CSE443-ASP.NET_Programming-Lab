@@ -4,8 +4,8 @@
     <div class="carousel-inner">
         @foreach (var item in Model)
         {
-            <div class="carousel-item @(item == Model.First() ? "active" : "")">
-                <img src="@item.ImageUrl" class="d-block w-100 h-50" alt="@item.Title">
+            <div class="carousel-item @(item.Order == 1 ? "active" : "")">
+                <img src="~/@item.ImageUrl" class="d-block w-100 h-50" alt="@item.Title">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>@item.Title</h5>
                     <p>@item.Description</p>

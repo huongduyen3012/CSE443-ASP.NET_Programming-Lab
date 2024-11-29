@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #078E15;
+    background-color: #F8F9FA;
 }
 
 nav .navbar-menu {
@@ -30,7 +30,7 @@ nav .navbar-menu {
  }
 
  li > a {
-     color: white;
+     color: black;
      text-decoration: none;
  }
 /*    nav .navbar-menu > li {

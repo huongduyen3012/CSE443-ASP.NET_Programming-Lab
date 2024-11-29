@@ -24,7 +24,7 @@
                             <input asp-for="Password" type="password" class="form-control" id="password" name="password" placeholder="Password" required />
                             <span asp-validation-for="Password"></span>
                             <span class="input-group-text bg-white">
-                                <i class="fas fa-eye" style="cursor: pointer;"></i>
+                                <i id="togglePassword" class="fas fa-eye" style="cursor: pointer;"></i>
                             </span>
                         </div>
 
@@ -64,5 +64,22 @@
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
     }
 }
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const passwordInput = document.getElementById('password');
+        const togglePassword = document.getElementById('togglePassword');
+
+        togglePassword.addEventListener('click', () => {
+            // Toggle the type attribute
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            // Toggle the icon class
+            togglePassword.classList.toggle('fa-eye');
+            togglePassword.classList.toggle('fa-eye-slash');
+        });
+    });
+</script>
