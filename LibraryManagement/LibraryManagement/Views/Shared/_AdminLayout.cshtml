@@ -42,10 +42,11 @@
             transition: color 0.2s, background-color 0.2s;
             border-radius: 0.25rem;
         }
-        .nav-link:hover {
-            color: #ffffff
-        }
-      
+
+            .nav-link:hover {
+                color: #ffffff
+            }
+
 
         /* Content area styling */
         main {
@@ -67,7 +68,15 @@
 
     <!-- Header -->
     <header class="py-3 text-center">
-        <h2>Library Management System - Admin Panel</h2>
+            <h2>Library Management System - Admin Panel</h2>
+            <div>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-info ">
+                Back To HomePage
+            </a>
+            <a asp-controller="Account" asp-action="Logout" class="btn btn-info">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+            </div>
     </header>
 
     <div class="container-fluid flex-grow-1 d-flex">
